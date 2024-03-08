@@ -1,5 +1,5 @@
 import time
-from PIL import Image
+
 
 import pytest
 from selenium import webdriver
