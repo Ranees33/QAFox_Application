@@ -1,5 +1,5 @@
 from tkinter import Image
-from PIL import Image
+# from PIL import Image
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
@@ -58,8 +58,8 @@ class BasePage:
 
     def take_screenshot(self, filename):
         self.driver.save_screenshot(filename)
-        webpage_Image = Image.open(filename)
-        webpage_Image.show()
+        # webpage_Image = Image.open(filename)
+        # webpage_Image.show()
 
     def scroll_to_element(self, by_locator):
         element = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located(by_locator))

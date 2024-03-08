@@ -1,12 +1,10 @@
 import time
-from lib2to3.pgen2 import driver
-from tkinter import Image
-from PIL import Image
 
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from pageObjects.addtocartPage import AddToCartPage
+from pageObjects.basePage import BasePage
 
 
 @pytest.mark.usefixtures("setup_and_teardown")

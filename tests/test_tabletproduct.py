@@ -5,6 +5,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+from pageObjects.basePage import BasePage
 from pageObjects.homePage import HomePage
 
 
