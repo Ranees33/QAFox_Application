@@ -8,7 +8,7 @@ from pageObjects.basePage import BasePage
 
 
 @pytest.mark.usefixtures("setup_and_teardown")
-@pytest.mark.skip(reason="Need to run the register test case separately")
+# @pytest.mark.skip(reason="Need to run the register test case separately")
 # @pytest.mark.run(order=2)
 class TestProductScreeshot:
     def test_addtocart_product_screenshot(self):

@@ -10,7 +10,7 @@ from pageObjects.homePage import HomePage
 
 
 @pytest.mark.usefixtures("setup_and_teardown")
-@pytest.mark.skip(reason="Need to run the register test case separately")
+# @pytest.mark.skip(reason="Need to run the register test case separately")
 # @pytest.mark.run(order=1)
 class TestSelectProduct:
     def test_select_tablet_product(self):
