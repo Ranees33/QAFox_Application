@@ -6,6 +6,7 @@ from pageObjects.registerPage import RegisterPage
 
 
 @pytest.mark.usefixtures("setup_and_teardown")
+# @pytest.mark.skip(reason="Need to run the login test case separately")
 class TestRegister:
     def test_register(self):
         to_create_an_account = RegisterPage(self.driver)
@@ -24,6 +25,7 @@ class TestRegister:
         time.sleep(10)
         actual_Text = to_create_an_account.get_email_already_registrd_text()
         expected_Text = "Warning: E-Mail Address is already registered!"
+        # Using assertion to verifying the text!
         assert actual_Text == expected_Text, f"Expected: {expected_Text}, Actual: {actual_Text}"
         print("This Email Address Already Registered Text is : " +
               to_create_an_account.get_email_already_registrd_text())

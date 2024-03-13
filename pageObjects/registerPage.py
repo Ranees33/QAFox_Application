@@ -60,12 +60,7 @@ class RegisterPage(BasePage):
     #     print("The Url for created a new account is : " + account_creation_URL)
 
     def get_email_already_registrd_text(self):
-        self.get_element_text(self.Get_Email_AlreadyReg_Text)
-        # actual_Text = self.get_element_text(self.Get_Email_AlreadyReg_Text)
-        # expected_Text = "Warning: E-Mail Address is already registered!"
-        # assert actual_Text == expected_Text, f"Expected: {expected_Text}, Actual: {actual_Text}"
-        # print("This Email Address Already Registered Text is : " +
-        #       self.get_element_text(self.Get_Email_AlreadyReg_Text))
+        return self.get_element_text(self.Get_Email_AlreadyReg_Text)
 
 
 
