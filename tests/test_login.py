@@ -18,7 +18,7 @@ class TestLogin:
         to_login.do_click_logout()
         time.sleep(10)
         actual_Text = to_login.get_account_logout_text()
-        expected_Text = "Account Logut"
+        expected_Text = "Account Logout"
         # Using assertion to verifying the text!
         assert actual_Text == expected_Text, f"Expected: {expected_Text}, Actual: {actual_Text}"
         actual_Title = to_login.get_logout_page_title()
