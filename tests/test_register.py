@@ -22,10 +22,10 @@ class TestRegister:
         to_create_an_account.do_click_submit_btn()
         # to_create_an_account.do_click_continue_btn()
         # to_create_an_account.get_account_created_success_url()
-        time.sleep(10)
+        time.sleep(5)
+        # Using assertion to verifying the text!
         actual_Text = to_create_an_account.get_email_already_registrd_text()
         expected_Text = "Warning: E-Mail Address is already registered!"
-        # Using assertion to verifying the text!
         assert actual_Text == expected_Text, f"Expected: {expected_Text}, Actual: {actual_Text}"
         print("This Email Address Already Registered Text is : " +
               to_create_an_account.get_email_already_registrd_text())
