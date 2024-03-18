@@ -13,6 +13,7 @@ class LoginPage(BasePage):
     Click_MyAccount_To_Logout = (By.XPATH, "//span[text()='My Account']")
     Click_Logout = (By.XPATH, "//div[@id='top-links']/ul[1]/li[2]/ul[1]/li[5]/a[1]")
     Get_Account_Logout_Text = (By.XPATH, "//div[@class='col-sm-9']//h1[1]")
+    Click_Continue_Btn = (By.LINK_TEXT, "Continue")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -44,6 +45,13 @@ class LoginPage(BasePage):
 
     def get_logout_page_title(self):
         return self.get_page_title(self.driver.title)
+
+    def do_click_continue_btn(self):
+        self.do_click(self.Click_Continue_Btn)
+
+    def get_page_url_after_continue_logout(self):
+        return self.get_current_url(self.driver.current_url)
+
 
 
 

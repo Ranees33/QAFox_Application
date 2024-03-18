@@ -25,4 +25,7 @@ class TestLogin:
         actual_Title = to_login.get_logout_page_title()
         assert actual_Title is not None and "Account Logout" in actual_Title
         print("Assertion Test Passed")
+        to_login.do_click_continue_btn()
+        print("The Webpage Url after continue the Logout: ", to_login.get_page_url_after_continue_logout())
+
 
