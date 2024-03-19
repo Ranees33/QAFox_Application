@@ -1,5 +1,5 @@
-from tkinter import Image
-from PIL import Image
+# from tkinter import Image
+# from PIL import Image
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.select import Select
