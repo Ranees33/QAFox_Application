@@ -1,3 +1,6 @@
+from tkinter import Image
+from PIL import Image
+
 from selenium.webdriver.common.by import By
 
 from configProperties.configinfo import Testdata
@@ -28,5 +31,7 @@ class AddToCartPage(BasePage):
 
     def takes_screenshot(self):
         self.take_screenshot("Productoncart.png")
+        webpage_Image = Image.open("Productoncart.png")
+        webpage_Image.show()
 
 
