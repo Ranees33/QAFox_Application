@@ -65,6 +65,10 @@ class BasePage:
         element = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located(by_locator))
         self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element)
 
+    def clear_textbox(self, by_locator):
+        element = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(by_locator))
+        element.clear()
+
 
 
 

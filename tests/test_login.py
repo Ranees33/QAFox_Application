@@ -6,6 +6,7 @@ from pageObjects.loginPage import LoginPage
 
 
 @pytest.mark.usefixtures("setup_and_teardown")
+# @pytest.mark.skip(reason="Need to run the checkout page test case separately")
 class TestLogin:
     def test_login(self):
         to_login = LoginPage(self.driver)
