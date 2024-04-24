@@ -28,5 +28,3 @@ class TestLogin:
         print("Assertion Test Passed")
         to_login.do_click_continue_btn()
         print("The Webpage Url after continue the Logout: ", to_login.get_page_url_after_continue_logout())
-
-

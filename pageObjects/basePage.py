@@ -69,6 +69,11 @@ class BasePage:
         element = WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(by_locator))
         element.clear()
 
+    def slider_move(self, by_locator):
+        element = WebDriverWait(self.driver, 25).until(EC.visibility_of_element_located(by_locator))
+        action = ActionChains(self.driver)
+        action.click_and_hold(element).move_by_offset(345, 0).release().perform()
+
 
 
 
