@@ -1,14 +1,19 @@
+import logging
 import time
 
 import pytest
 
 from pageObjects.loginPage import LoginPage
+from utilities.logger import LogGen
 
 
 @pytest.mark.usefixtures("setup_and_teardown")
 # @pytest.mark.skip(reason="Need to run the checkout page test case separately")
 class TestLogin:
+    logger = LogGen.log_gen()
+
     def test_login(self):
+        logging.info("Program execution started")
         to_login = LoginPage(self.driver)
         to_login.do_click_myaccount_to_login()
         to_login.do_click_login()
@@ -28,3 +33,4 @@ class TestLogin:
         print("Assertion Test Passed")
         to_login.do_click_continue_btn()
         print("The Webpage Url after continue the Logout: ", to_login.get_page_url_after_continue_logout())
+        logging.info("Program execution ended")

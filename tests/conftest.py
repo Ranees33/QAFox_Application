@@ -1,7 +1,9 @@
 import pytest
 from selenium import webdriver
 from configProperties.configinfo import Testdata
-from utilities.logger import logging
+from utilities.logger import logging, LogGen
+
+logger = LogGen.log_gen()
 
 
 @pytest.fixture()
