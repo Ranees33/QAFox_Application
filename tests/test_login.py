@@ -8,6 +8,7 @@ from utilities.logger import LogGen
 
 
 @pytest.mark.usefixtures("setup_and_teardown")
+@pytest.mark.regression
 # @pytest.mark.skip(reason="Need to run the checkout page test case separately")
 class TestLogin:
     logger = LogGen.log_gen()
