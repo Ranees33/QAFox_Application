@@ -6,20 +6,33 @@ import pytest
 from pageObjects.loginPage import LoginPage
 from utilities.logger import LogGen
 
+# Define Data
+data = [
+    ("tonyboniee@gmail.com", "tonyboniee"),
+    ("admin", "admin123")
+
+]
+
 
 @pytest.mark.usefixtures("setup_and_teardown")
-@pytest.mark.regression
 # @pytest.mark.skip(reason="Need to run the checkout page test case separately")
 class TestLogin:
     logger = LogGen.log_gen()
 
-    def test_login(self):
+
+    @pytest.fixture(params=data)
+    def user_data(self, request):
+        return request.param
+
+    @pytest.mark.regression
+    def test_login(self, user_data):
+        u_name, p_word = user_data
         logging.info("Program execution started")
         to_login = LoginPage(self.driver)
         to_login.do_click_myaccount_to_login()
         to_login.do_click_login()
-        to_login.do_enter_email("tonyboniee@gmail.com")
-        to_login.do_enter_password("tonyboniee")
+        to_login.do_enter_email(u_name)
+        to_login.do_enter_password(p_word)
         to_login.do_click_login_btn()
         to_login.do_click_myaccount_to_logout()
         to_login.do_click_logout()
